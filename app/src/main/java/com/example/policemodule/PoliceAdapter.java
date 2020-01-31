@@ -18,11 +18,9 @@ import butterknife.ButterKnife;
 
 public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.ViewHolder>
 {
-    private Context context;
     private ArrayList<Police_Info> info;
 
-    public PoliceAdapter(Context context, ArrayList<Police_Info> info) {
-        this.context = context;
+    public PoliceAdapter(ArrayList<Police_Info> info) {
         this.info = info;
     }
 

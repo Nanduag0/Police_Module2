@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,15 +26,21 @@ import butterknife.ButterKnife;
 public class RegisterActivity extends AppCompatActivity {
 
     @BindView(R.id.activity_register_tv_email)
-    TextView email;
+     EditText email;
     @BindView(R.id.activity_register_tv_password)
-    TextView password;
+    EditText password;
     @BindView(R.id.activity_register_tv_confirmpass)
-    TextView cnfpassword;
+    EditText cnfpassword;
     @BindView(R.id.activity_register_tv_login)
     TextView login;
     @BindView(R.id.activity_register_btn_register)
     Button reister;
+    @BindView(R.id.activity_register_poicename)
+    EditText policename;
+    @BindView(R.id.activity_register_phno)
+    EditText phone_no;
+
+
     @BindView(R.id.progress_bar)
     ProgressBar progressBar;
 
@@ -50,8 +57,11 @@ public class RegisterActivity extends AppCompatActivity {
         reister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String name=policename.getText().toString();
+                String phno=phone_no.getText().toString();
                 String emailId = email.getText().toString();
                 String pwd = password.getText().toString();
+
                 String cfmpwd = cnfpassword.getText().toString();
                 if (TextUtils.isEmpty(emailId)) {
                     Toast.makeText(RegisterActivity.this, "Please enter the email", Toast.LENGTH_SHORT).show();
