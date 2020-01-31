@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/image_settings"
+        android:layout_marginBottom="80sp"
+        android:background="@drawable/settings"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fragment_settings_website"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="580dp"
+        android:text="WEBSITE"
+        android:textSize="18dp"
+        android:textColor="@color/md_grey_50"
+        app:backgroundTint="@color/colorPrimary"
+        app:iconPadding="20dp"
+        app:iconSize="16dp"
+        app:iconTint="@null"
+        app:rippleColor="@color/md_grey_50"
+        />
+</RelativeLayout>
