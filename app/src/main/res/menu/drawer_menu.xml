@@ -4,15 +4,15 @@
     tools:showsIn="navigation">
     <group android:checkableBehavior="single">
 
-        <item android:id="@+id/dashboard"
+        <item android:id="@+id/profile"
             android:title="Profile"
             android:icon="@drawable/ic_person_black_24dp"/>
-        <item android:id="@+id/events"
+        <item android:id="@+id/settings"
             android:title="Settings"
-            android:icon="@drawable/ic_accessibility_black_24dp"/>
-        <item android:id="@+id/search"
+            android:icon="@drawable/ic_settings_black_24dp"/>
+        <item android:id="@+id/about_us"
             android:title="About Us"
-            android:icon="@drawable/common_full_open_on_phone"/>
+            android:icon="@drawable/ic_accessibility_black_24dp"/>
 
     </group>
 
