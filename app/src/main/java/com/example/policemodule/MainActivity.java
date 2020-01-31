@@ -13,6 +13,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.policemodule.Drawer.AboutUsFragment;
+import com.example.policemodule.Drawer.ProfileFragment;
+import com.example.policemodule.Drawer.SettingFragment;
 import com.example.policemodule.map.Map_Fragment;
 import com.example.policemodule.police.Police_fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -20,7 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
 
 
@@ -51,11 +54,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
     /*   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setTitle("Police Module");*/
-
         setSupportActionBar(toolbar);
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar, R.string.open, R.string.close);
@@ -63,7 +64,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         actionBarDrawerToggle.syncState();
         //getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         //navigationView.setNavigationItemSelectedListener(this);
-        botnav.setOnNavigationItemSelectedListener(this);
+        //
+        botnav.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+        //navigation drawer listener
+        navigationView.setNavigationItemSelectedListener(this);
+
 
         if (policeFragment == null) {
             policeFragment = new Police_fragment();
@@ -75,45 +80,62 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)){
-              drawerLayout.closeDrawer(GravityCompat.START);
+            drawerLayout.closeDrawer(GravityCompat.START);
 
         }
-    else{
-
-    super.onBackPressed();
-        }    }
-
-
-
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        int id = menuItem.getItemId();
-        int colorID;
-        Fragment frag;
-        switch (id) {
-            case R.id.nav_home:
-                frag = new Police_fragment();
-                colorID = R.color.nav_police;
-                break;
-
-            case R.id.nav_events:
-                frag = new Map_Fragment();
-                colorID = R.color.nav_map;
-                break;
-            default:
-                return false;
+        else{
+            super.onBackPressed();
         }
-
-        botnav.setBackgroundColor(getResources().getColor(colorID));
-        loadFragment(frag);
-        return true;
     }
 
-    private void loadFragment(Fragment frag) {
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            int id = menuItem.getItemId();
+            int colorID;
+            Fragment frag;
+            switch (id) {
+                case R.id.nav_home:
+                    frag = new Police_fragment();
+                    colorID = R.color.nav_police;
+                    break;
+
+                case R.id.nav_events:
+                    frag = new Map_Fragment();
+                    colorID = R.color.nav_map;
+                    break;
+                default:
+                    return false;
+            }
+
+            botnav.setBackgroundColor(getResources().getColor(colorID));
+            loadFragment(frag);
+            return true;
+        }
+    };
+
+    private void loadFragment(Fragment frag)
+    {
         fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.act_main_fragment_layout, frag).commit();
 
-
     }
 
-
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
+    {
+        switch (menuItem.getItemId())
+        {
+            case R.id.profile:
+                getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout,new ProfileFragment()).commit();
+                break;
+            case R.id.settings:
+                getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout,new SettingFragment()).commit();
+                break;
+            case R.id.about_us:
+                getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout,new AboutUsFragment()).commit();
+                break;
+        }
+        return true;
+    }
 }
