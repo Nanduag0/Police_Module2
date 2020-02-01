@@ -18,30 +18,31 @@
             android:id="@+id/act_main_toolbar1"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
             android:background="@color/colorPrimary"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:menu="@menu/toolbar_menu"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:layout_alignParentTop="true"/>
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <FrameLayout
             android:id="@+id/act_main_fragment_layout"
             android:layout_width="match_parent"
             android:layout_height="650dp"
-            android:layout_below="@id/act_main_toolbar1"
-            android:layout_above="@+id/act_main_bnv"/>
+            android:layout_above="@+id/act_main_bnv"
+            android:layout_below="@id/act_main_toolbar1" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
 
             android:id="@+id/act_main_bnv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
             android:background="@color/md_indigo_200"
-            app:menu="@menu/bottom_navigation"
-            android:layout_alignParentBottom="true"/>
+            app:menu="@menu/bottom_navigation" />
 
     </RelativeLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
         android:layout_width="wrap_content"
@@ -51,8 +52,7 @@
         app:headerLayout="@layout/header"
         app:itemIconTint="@color/md_grey_900"
         app:itemTextColor="@color/md_grey_900"
-        app:menu="@menu/drawer_menu"
-        >
+        app:menu="@menu/drawer_menu">
 
 
     </com.google.android.material.navigation.NavigationView>

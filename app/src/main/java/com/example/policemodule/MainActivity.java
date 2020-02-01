@@ -20,11 +20,11 @@ import com.example.policemodule.map.Map_Fragment;
 import com.example.policemodule.police.Police_fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
-{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     @BindView(R.id.act_main_bnv)
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportActionBar().setTitle("Police Module");*/
         setSupportActionBar(toolbar);
 
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout,toolbar, R.string.open, R.string.close);
+        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
         //getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
@@ -79,12 +79,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START))
-        {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
 
-        }
-        else{
+        } else {
             super.onBackPressed();
         }
     }
@@ -115,29 +113,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     };
 
-    private void loadFragment(Fragment frag)
-    {
+    private void loadFragment(Fragment frag) {
         fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.act_main_fragment_layout, frag).commit();
 
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
-    {
-        switch (menuItem.getItemId())
-        {
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
             case R.id.profile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout,new ProfileFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout, new ProfileFragment()).commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout,new SettingFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout, new SettingFragment()).commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
 
                 break;
             case R.id.about_us:
-                getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout,new AboutUsFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout, new AboutUsFragment()).commit();
                 drawerLayout.closeDrawer(GravityCompat.START);
                 break;
         }

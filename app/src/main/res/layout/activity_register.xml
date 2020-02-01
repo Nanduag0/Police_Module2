@@ -34,7 +34,7 @@
             android:drawableRight="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
             android:hint="Name"
-            android:inputType="text" />
+            android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,7 +51,7 @@
             android:drawableRight="@drawable/ic_email_black_24dp"
             android:drawablePadding="10dp"
             android:hint="Email"
-            android:inputType="text" />
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -103,7 +103,7 @@
             android:drawableRight="@drawable/ic_local_phone_black_24dp"
             android:drawablePadding="10dp"
             android:hint="Ph-Number"
-            android:inputType="textPassword" />
+            android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -125,6 +125,7 @@
         android:layout_marginTop="600dp"
         android:scaleX="1.3"
         android:scaleY="1.3"
+        android:padding="2dp"
         android:textAlignment="center"
         android:text="REGISTER"
         android:textColor="@color/md_grey_50"
