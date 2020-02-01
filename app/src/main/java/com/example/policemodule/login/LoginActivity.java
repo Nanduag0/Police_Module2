@@ -57,31 +57,33 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String emailId = email.getText().toString();
-                String pwd = password.getText().toString();
-                if (TextUtils.isEmpty(emailId)) {
-                    Toast.makeText(LoginActivity.this, "Plese enter valid email", Toast.LENGTH_SHORT).show();
-                }
-                if (TextUtils.isEmpty(pwd)) {
-                    Toast.makeText(LoginActivity.this, "Please enter valid password", Toast.LENGTH_SHORT).show();
-                }
-                firebaseAuth.signInWithEmailAndPassword(emailId, pwd)
-                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                    startActivity(intent);
-                                    finish();
-                                } else {
-                                    //Intent intent = new Intent(LoginActivity.this, MainActivity.class);//will be commented out
-                                   // startActivity(intent);//will be commented out
-                                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                }
-                            }
-
-                        });
+//                String emailId = email.getText().toString();
+//                String pwd = password.getText().toString();
+//                if (TextUtils.isEmpty(emailId)) {
+//                    Toast.makeText(LoginActivity.this, "Plese enter valid email", Toast.LENGTH_SHORT).show();
+//                }
+//                if (TextUtils.isEmpty(pwd)) {
+//                    Toast.makeText(LoginActivity.this, "Please enter valid password", Toast.LENGTH_SHORT).show();
+//                }
+//                firebaseAuth.signInWithEmailAndPassword(emailId, pwd)
+//                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<AuthResult> task) {
+//                                if (task.isSuccessful()) {
+//                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                    startActivity(intent);
+//                                    finish();
+//                                } else {
+////                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);//will be commented out
+////                                    startActivity(intent);//will be commented out
+//                                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//
+//                        });
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);//will be commented out
+                startActivity(intent);//will be commented out
             }
         });
 
