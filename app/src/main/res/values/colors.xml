@@ -312,8 +312,10 @@
     <color name="bg_card_25_opac_black">#40000000</color>
     <color name="bg_card_85_opac_black">#D9000000</color>
     <color name="md_blue_grey_700_opac">#3E66C1E7</color>
+    <color name="md_blue_grey_800_opac">#7266C1E7</color>
     <color name="colorPrimary_try">#A3182874</color>
     <color name="try_color">#29388B</color>
+    
 
 
 </resources>
