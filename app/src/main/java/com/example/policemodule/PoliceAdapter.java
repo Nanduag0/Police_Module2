@@ -35,9 +35,6 @@ public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.ViewHolder
     {
         holder.stationimage.setImageResource(info.get(position).getImage());
         holder.location.setText(info.get(position).getLocation());
-        holder.policestation.setText(info.get(position).getPolicestation());
-        holder.police_address.setText(info.get(position).getAddress());
-        holder.phoneno.setText(info.get(position).getPhno());
 
 
     }
@@ -45,7 +42,7 @@ public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.ViewHolder
     public int getItemCount()
     {
 
-         return  info.size();
+        return  info.size();
 
     }
 
@@ -56,12 +53,7 @@ public class PoliceAdapter extends RecyclerView.Adapter<PoliceAdapter.ViewHolder
         ImageView stationimage;
         @BindView(R.id.police_frag_tv_locationplace)
         TextView location;
-        @BindView(R.id.police_frag_policestation_name)
-        TextView policestation;
-        @BindView(R.id.police_frag_police_address)
-        TextView police_address;
-        @BindView(R.id.police_frag_tv_phoneno)
-        TextView  phoneno;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
