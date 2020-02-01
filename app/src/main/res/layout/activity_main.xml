@@ -35,7 +35,7 @@
 
             android:id="@+id/act_main_bnv"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:background="@color/md_indigo_200"
             app:menu="@menu/bottom_navigation"

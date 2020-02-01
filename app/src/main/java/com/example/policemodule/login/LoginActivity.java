@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,9 +24,9 @@ import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.activity_login_tv_email)
-    TextView email;
+    EditText email;
     @BindView(R.id.activity_login_tv_password)
-    TextView password;
+    EditText password;
     @BindView(R.id.activity_login_btn_login)
     Button login;
     @BindView(R.id.activity_login_tv_join)

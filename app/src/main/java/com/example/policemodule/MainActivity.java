@@ -79,7 +79,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START))
+        {
             drawerLayout.closeDrawer(GravityCompat.START);
 
         }
@@ -128,12 +129,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             case R.id.profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout,new ProfileFragment()).commit();
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
             case R.id.settings:
                 getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout,new SettingFragment()).commit();
+                drawerLayout.closeDrawer(GravityCompat.START);
+
                 break;
             case R.id.about_us:
                 getSupportFragmentManager().beginTransaction().replace(R.id.act_main_fragment_layout,new AboutUsFragment()).commit();
+                drawerLayout.closeDrawer(GravityCompat.START);
                 break;
         }
         return true;
