@@ -120,7 +120,7 @@
     <color name="md_light_blue_900">#01579B</color>
     <color name="md_light_blue_A100">#80D8FF</color>
     <color name="md_light_blue_A200">#40C4FF</color>
-    <color name="md_light_blue_A400">#00B0FF</color>
+    <color name="md_light_blue_A400">#5C9AB6</color>
     <color name="md_light_blue_A700">#0091EA</color>
 
     <!-- cyan -->
@@ -308,6 +308,12 @@
     <!--home frag-->
     <color name="nav_home_analogous">#2745a0</color>
     <color name="mdc_text_home">#ffffff</color>
-    <color name="md_blue_grey_600_opaq">#A87B9DAD</color>
+    <color name="bg_card_50_opac_black">#80000000</color>
+    <color name="bg_card_25_opac_black">#40000000</color>
+    <color name="bg_card_85_opac_black">#D9000000</color>
+    <color name="md_blue_grey_700_opac">#3E66C1E7</color>
+    <color name="colorPrimary_try">#A3182874</color>
+    <color name="try_color">#29388B</color>
+
 
 </resources>

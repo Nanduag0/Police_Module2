@@ -5,14 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:alpha="0.9">
+    android:background="@color/md_blue_grey_700"
+
+    >
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/aboutus_frag_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/item_aboutus" />
+
+        />
 
 </RelativeLayout>
