@@ -75,8 +75,8 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    //Intent intent = new Intent(LoginActivity.this, MainActivity.class);//will be commented out
-                                   // startActivity(intent);//will be commented out
+//                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);//will be commented out
+//                                    startActivity(intent);//will be commented out
                                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
