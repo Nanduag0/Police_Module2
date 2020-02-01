@@ -30,6 +30,7 @@ public class Police_fragment extends Fragment
 
     RecyclerView.LayoutManager layoutManager;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

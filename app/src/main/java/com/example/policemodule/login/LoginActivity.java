@@ -61,9 +61,11 @@ public class LoginActivity extends AppCompatActivity {
                 String pwd = password.getText().toString();
                 if (TextUtils.isEmpty(emailId)) {
                     Toast.makeText(LoginActivity.this, "Plese enter valid email", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 if (TextUtils.isEmpty(pwd)) {
                     Toast.makeText(LoginActivity.this, "Please enter valid password", Toast.LENGTH_SHORT).show();
+                    return;
                 }
                 firebaseAuth.signInWithEmailAndPassword(emailId, pwd)
                         .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
@@ -75,8 +77,8 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     finish();
                                 } else {
-                                    //Intent intent = new Intent(LoginActivity.this, MainActivity.class);//will be commented out
-                                   // startActivity(intent);//will be commented out
+//                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);//will be commented out
+//                                    startActivity(intent);//will be commented out
                                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
