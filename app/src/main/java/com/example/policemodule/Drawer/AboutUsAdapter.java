@@ -38,11 +38,9 @@ public class AboutUsAdapter extends RecyclerView.Adapter<AboutUsAdapter.ImageVie
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position)
     {
-   holder.imageView.setImageResource(alist.get(position).getImage());
-   holder.membername.setText(alist.get(position).getMember_name());
-   holder.memberwork.setText(alist.get(position).getMember_work());
-
-
+    holder.imageView.setImageResource(alist.get(position).getImage());
+    holder.membername.setText(alist.get(position).getMember_name());
+    holder.memberwork.setText(alist.get(position).getMember_work());
     }
 
     @Override

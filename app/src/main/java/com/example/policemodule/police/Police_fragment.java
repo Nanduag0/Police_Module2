@@ -53,8 +53,8 @@ public class Police_fragment extends Fragment
 
     private void initrecycleadapter(Context context)
     {
-        layoutManager = new LinearLayoutManager(getActivity());
-        PoliceAdapter policeAdapter=new PoliceAdapter(getActivity(),infos);
+        layoutManager = new LinearLayoutManager(getContext());
+        PoliceAdapter policeAdapter=new PoliceAdapter(infos);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setAdapter(policeAdapter);

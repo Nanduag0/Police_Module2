@@ -40,11 +40,7 @@ public class AboutUsFragment extends Fragment {
 
         View parent=inflater.inflate(R.layout.fragment_aboutus,container,false);
         ButterKnife.bind(this,parent);
-        list=new ArrayList<>();
-        list.add(new AboutUsModel(R.drawable.asis,"ASIS KUMAR ROY","Machine Learing"));
-        list.add(new AboutUsModel(R.drawable.yash,"YASH SRIVASTAVA","Android Developer"));
-        list.add(new AboutUsModel(R.drawable.nandini,"NANDINI AGARWAL","Android Developer"));
-        list.add(new AboutUsModel(R.drawable.trishna,"TRISHNA KALITA","Android Developer"));
+
         initrecycleradapter(getContext());
 
          return parent;
@@ -53,8 +49,19 @@ public class AboutUsFragment extends Fragment {
     public void initrecycleradapter(Context context)
     {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
-        AboutUsAdapter aboutUsAdapter=new AboutUsAdapter(list);
+        AboutUsAdapter aboutUsAdapter=new AboutUsAdapter(loaditems());
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(aboutUsAdapter);
+    }
+    //will be removed later
+    public List<AboutUsModel> loaditems()
+    {
+        list=new ArrayList<>();
+        list.add(new AboutUsModel(R.drawable.asis,"ASIS KUMAR ROY","Machine Learing"));
+        list.add(new AboutUsModel(R.drawable.yash,"YASH SRIVASTAVA","Android Developer"));
+        list.add(new AboutUsModel(R.drawable.nandini,"NANDINI AGARWAL","Android Developer"));
+        list.add(new AboutUsModel(R.drawable.trishna,"TRISHNA KALITA","Android Developer"));
+        return  list;
+
     }
 }
